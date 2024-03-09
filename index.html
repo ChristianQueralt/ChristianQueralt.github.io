@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>PokeTips</title>
+    <link rel="icon" href="resources/logo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body>
+    <header>
+        <img src="resources/logo.png" alt="logo_poketips" style="width:100px; height:auto; display:block; margin:auto;">
+        <h1>Prácticas FHIC</h1>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href='nosotros.html' title="Conócenos mejor!">Miembros</a></li>
+                <li><a href='contacto.html' title="Cualquier duda es bienvenida :)">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Web del Grupo B4</h2>
+            <p>¡Bienvenidos a la página web del grupo B4!</p>
+            <p>Aquí encontraréis toda la información relacionada con nuestro grupo y nuestro proyecto web POKETIPS ...</p>
+        </section>
+        
+        
+        <div class="container">
+            <div class="members">
+                <section>
+                    <h3>Miembros del grupo</h3>
+                    <ul>
+                        <li>Daniel González <img src="resources/lil.jpeg" title="Lil Dani" alt="LIL" width="150" height="200"></li>
+                        <li>Christian Queralt <img src="resources/chris.jpeg" title="Chris" alt="CHRIS" width="150" height="200"></li>
+                        <li>Daniel Ramos <img src="resources/big.jpeg" title="Big Dani" alt="BIG" width="150" height="200"></li>
+                    </ul>
+                    <p>Más información del grupo en <a href="nosotros.html">Sobre Nosotros</a></p>
+                </section>
+            </div>
+            
+            <div class="main_content">
+                <section>
+                    <h3>Información del proyecto</h3>
+                    <p>Explora la riqueza del mundo Pokémon con PokeTips, tu destino definitivo para descubrir todos los secretos de la generación original. 
+                        Con páginas dedicadas a los tipos de Pokémon, sus ataques, detalles de cada criatura, guías de rutas y consejos esenciales, nuestra web está diseñada para ser un recurso exhaustivo para jugadores de todos los niveles.
+                        PokeTips se compromete a proporcionar una experiencia de usuario excepcional, centrada en la educación y la diversión. 
+                        Desarrollada por y para fans de Pokémon, nuestra web mantiene el espíritu de aventura y descubrimiento que ha hecho famosa a esta serie. 
+                        Nos aseguramos de que toda la información sea precisa, actualizada y relevante para que puedas mejorar tus habilidades y conocimientos, ya sea que estés comenzando tu viaje o buscando dominar las competencias.
+                        Unámonos en la comunidad de PokeTips y comparte tus propias experiencias mientras continuamos aprendiendo y celebrando el fenómeno que ha cautivado a millones. ¡Con PokeTips a tu lado, estarás siempre listo para convertirte en un verdadero Maestro Pokémon!
+                    </p>
+                </section>
+                
+                <section>
+                    <img src="resources/pikachu_bailando.gif" alt="Animated GIF">
+                </section>
+            </div>
+    
+            <div class="contact-section">
+                <section>
+                    <h3>Contacto</h3>
+                    <p>Si tenéis alguna opinión, sugerencia sobre nuestro proyecto web, contactar con nosotros <a href="contacto.html">Contacto</a></p>
+                    <p>En nuestro apartado sobre nuestros <a href="principiosDiseno.html">principios</a> se explican los principios de diseño que se han aplicado en el diseño.</p>
+                </section>
+            </div>
+        </div>
+    
+    <section>
+        <h3>Pokémon Trainer Game</h3>
+        <p>¡Atrapa un Pokémon!</p>
+        <button onclick="catchPokemon()" class="pokeball-button">
+            <img src="resources/pokeball_bw.png" alt="pokeball" class="pokeball-image" height="50" width="auto">
+        </button>
+        <p id="pokemon"></p>
+    </section>
+
+    <script>
+        function catchPokemon() {
+        const pokemons = [
+            "Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard", "Squirtle", "Wartortle", "Blastoise", "Caterpie",
+            "Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill", "Pidgey", "Pidgeotto", "Pidgeot", "Rattata", "Raticate",
+            "Spearow", "Fearow", "Ekans", "Arbok", "Pikachu", "Raichu", "Sandshrew", "Sandslash", "Nidoran♀", "Nidorina",
+            "Nidoqueen", "Nidoran♂", "Nidorino", "Nidoking", "Clefairy", "Clefable", "Vulpix", "Ninetales", "Jigglypuff", "Wigglytuff",
+            "Zubat", "Golbat", "Oddish", "Gloom", "Vileplume", "Paras", "Parasect", "Venonat", "Venomoth", "Diglett",
+            "Dugtrio", "Meowth", "Persian", "Psyduck", "Golduck", "Mankey", "Primeape", "Growlithe", "Arcanine", "Poliwag",
+            "Poliwhirl", "Poliwrath", "Abra", "Kadabra", "Alakazam", "Machop", "Machoke", "Machamp", "Bellsprout", "Weepinbell",
+            "Victreebel", "Tentacool", "Tentacruel", "Geodude", "Graveler", "Golem", "Ponyta", "Rapidash", "Slowpoke", "Slowbro",
+            "Magnemite", "Magneton", "Farfetch'd", "Doduo", "Dodrio", "Seel", "Dewgong", "Grimer", "Muk", "Shellder",
+            "Cloyster", "Gastly", "Haunter", "Gengar", "Onix", "Drowzee", "Hypno", "Krabby", "Kingler", "Voltorb",
+            "Electrode", "Exeggcute", "Exeggutor", "Cubone", "Marowak", "Hitmonlee", "Hitmonchan", "Lickitung", "Koffing", "Weezing",
+            "Rhyhorn", "Rhydon", "Chansey", "Tangela", "Kangaskhan", "Horsea", "Seadra", "Goldeen", "Seaking", "Staryu",
+            "Starmie", "Mr. Mime", "Scyther", "Jynx", "Electabuzz", "Magmar", "Pinsir", "Tauros", "Magikarp", "Gyarados",
+            "Lapras", "Ditto", "Eevee", "Vaporeon", "Jolteon", "Flareon", "Porygon", "Omanyte", "Omastar", "Kabuto",
+            "Kabutops", "Aerodactyl", "Snorlax", "Articuno", "Zapdos", "Moltres", "Dratini", "Dragonair", "Dragonite", "Mewtwo",
+            "Mew"
+        ];
+            const randomIndex = Math.floor(Math.random() * pokemons.length);
+            const pokemon = pokemons[randomIndex];
+            alert(`¡Has atrapado un ${pokemon}!`);
+        }
+    </script>
+    
+    <footer>
+        <p>Copyright © FHIC 23-24 - POKETIPS</p>
+    </footer>
+</body>
+</html>

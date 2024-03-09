@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex; /* Aplicar flexbox */
+    justify-content: space-between; /* Distribueix el contingut */
+    align-items: start; /* Alinea els elements al principi */
+    gap: 60px; /* Espai entre les columnes */
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px; /* O el mida que prefereixis */
+}
+
+.contact-section {
+    width: 2000px;
+    border: 3px solid #9c3f3f;
+    margin: 10px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: rgb(245, 106, 106);
+    color: #333;
+    text-decoration: none;
+    border-radius: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #fffde4;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    
+}
+
+.nav-menu li {
+    margin-right: 20px;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li:last-child {
+    margin-right: 0;
+}
+
+.nav-menu li a:hover {
+    color: #ff9900;
+}
+
+/* Afegeix estils per a la secció principal i la barra lateral */
+.main-content {
+    display: flex;
+    flex-direction: column; /* Configura els fills en columna */
+    flex-grow: 2; /* Permet que aquest element creixi */
+    margin-right: 20px; 
+    
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Permet que aquest element creixi */
+}
+
+.members, .main-content, .sidebar {
+    border: 3px solid #9c3f3f; /* Ajusta el color y grosor del borde según prefieras */
+    padding: 20px; /* Añade algo de espacio dentro de los bordes */
+    margin: 10px; /* Añade algo de espacio entre las columnas si es necesario */
+}
+
+/* Afegeix estils per al peu de pàgina */
+footer {
+    background-color: #fac1c1;
+    color: #333;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+/* Afegeix estils per a la capçalera */
+header {
+    background-color: #fac1c1;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+/* Media queries per a responsivitat */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .main-content {
+        margin-right: 0;
+        
+    }
+}
